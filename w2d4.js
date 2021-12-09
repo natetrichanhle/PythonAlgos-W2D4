@@ -38,20 +38,21 @@ to the original position.
  * @returns {string} The string rotated by the given amount.
  */
  function rotateStr(str, amnt) {
-    let arr = str.split("");
-    let newarr = [];
+    let arr = str.split("")
+    let newarr = []
     if(arr.length< amnt){
-      amnt = amnt - arr.length;
+      amnt = amnt - arr.length
     }
     for(let i = arr.length-amnt; i < arr.length; i++){
-      newarr.push(arr[i]);
+      newarr.push(arr[i])
     }
     for(let j = 0; j  < arr.length-amnt; j++){
-      newarr.push(arr[j]);
+      newarr.push(arr[j])
     }
     let newStr = newarr.join('')
-    console.log(newStr);
-    return newStr;
+    console.log(newStr)
+    return newStr
+  
   }
 
 module.exports = { rotateStr: rotateStr2 };
@@ -81,7 +82,16 @@ const expected2 = false;
  * @param {string} s2
  * @returns {boolean} Whether the second string is a rotated version of the 1st.
  */
-function isRotation(s1, s2) {}
+ function isRotation(s1, s2) {
+    for(let i = 0; i < s1.length;i++){
+      let temp = rotateStr(s1,i)
+      
+      if(temp === s2){
+        return true
+      }
+    }
+    return false
+  }
 
 module.exports = { isRotation };
 
